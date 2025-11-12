@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../style/style.css"/>
+    <link rel="stylesheet" href="/static/style/login.css">
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
-        <form action="/chat_room" method="post">
-            <input type="text" id="username" name="username" placeholder="Username" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <button type="submit" id="login-button">Login</button>
-        </form>
-        <a href="/register">register?</a>
+        <div class="login-form">
+            <h2>Chat Login</h2>
+
+            % if error_display != 'none':
+            <div class="error-message">
+                {{error_display.replace('_', ' ')}}
+            </div>
+            % end
+
+            <form action="/chat_room" method="POST">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Benutzername" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Passwort" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

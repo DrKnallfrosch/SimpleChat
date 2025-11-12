@@ -6,6 +6,6 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "bottle>=0.13.4",
+    "bottle-login>=0.0.3",
     "docker>=7.1.0",
-    "mariadb>=1.1.13",
 ]
